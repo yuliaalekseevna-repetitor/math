@@ -1,184 +1,1056 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Стороженко Юлия Алексеевна — Репетитор по математике и физике (5–7 класс) | Новороссийск и Онлайн</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Шрифты Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Иконки Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#4F46E5', // Indigo 600
-                        primaryDark: '#4338CA',
-                        secondary: '#0EA5E9', // Sky 500
-                        accent: '#F59E0B', // Amber 500
-                    }
-                }
-            }
-        }
-    </script>
+    <meta name="description" content="Понятная математика (5–7 класс) и физика (7 класс) со школьным преподавателем. Очно в Новороссийске и онлайн. Бесплатная диагностика или 1-й урок со скидкой 50%!">
+
+    <!-- Красивое превью при отправке ссылки в Telegram, MAX, WhatsApp и ВК -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yuliaalekseevna-repetitor.github.io/math/">
+    <meta property="og:title" content="Стороженко Юлия Алексеевна — Репетитор по математике и физике">
+    <meta property="og:description" content="5–7 классы • Очно в г. Новороссийск и Онлайн • Бесплатная диагностика (15–30 мин) или первый урок со скидкой 50% (500 ₽)!">
+    <meta property="og:image" content="https://yuliaalekseevna-repetitor.github.io/math/5375389667211025568.jpg">
+
+    <!-- Встроенные автономные стили (работают в РФ мгновенно без внешних CDN и VPN) -->
     <style>
-        .math-bg {
-            background-color: #f8fafc;
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --primary-light: #EEF2FF;
+            --secondary: #0EA5E9;
+            --secondary-light: #E0F2FE;
+            --amber: #F59E0B;
+            --amber-light: #FEF3C7;
+            --emerald: #10B981;
+            --slate-900: #0F172A;
+            --slate-800: #1E293B;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748B;
+            --slate-400: #94A3B8;
+            --slate-200: #E2E8F0;
+            --slate-100: #F1F5F9;
+            --slate-50: #F8FAFC;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--slate-800);
+            background-color: var(--slate-50);
             background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
             background-size: 24px 24px;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button, input, select {
+            font-family: inherit;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .container-md {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        /* Шапка */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--primary-light);
+            flex-shrink: 0;
+        }
+
+        .brand-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--slate-900);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .brand-sub {
+            font-size: 12px;
+            color: var(--slate-500);
+        }
+
+        .nav {
+            display: none;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--slate-600);
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 38px;
+            padding: 0 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-tg-small {
+            background: rgba(42, 171, 238, 0.12);
+            color: #2AABEE;
+        }
+        .btn-tg-small:hover {
+            background: #2AABEE;
+            color: #fff;
+        }
+
+        .btn-max-small {
+            background: #EDE9FE;
+            color: #6D28D9;
+        }
+        .btn-max-small:hover {
+            background: #6D28D9;
+            color: #fff;
+        }
+
+        .btn-share {
+            background: var(--slate-100);
+            color: var(--slate-700);
+        }
+        .btn-share:hover {
+            background: var(--slate-200);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Главный экран */
+        .hero {
+            padding: 40px 0 70px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .badge-loc {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            border: 1px solid #C7D2FE;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--slate-900);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--slate-600);
+            margin-bottom: 22px;
+            max-width: 620px;
+        }
+
+        .promo-box {
+            background: #fff;
+            border: 1px solid var(--slate-200);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        .promo-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #D97706;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 12px;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .promo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+        }
+
+        .promo-amber {
+            background: #FFFBEB;
+            border: 1px solid #FDE68A;
+        }
+
+        .promo-indigo {
+            background: #EEF2FF;
+            border: 1px solid #C7D2FE;
+        }
+
+        .promo-tag {
+            font-size: 11px;
+            font-weight: 800;
+            color: #fff;
+            padding: 3px 7px;
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-lg {
+            padding: 15px 26px;
+            font-size: 15px;
+            border-radius: 14px;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--slate-700);
+            border: 1px solid #CBD5E1;
+            font-weight: 600;
+            padding: 15px 22px;
+            border-radius: 14px;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--slate-50);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Карточка фото */
+        .profile-card-wrap {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 24px;
+            border: 1px solid var(--slate-200);
+            padding: 18px;
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
+        }
+
+        .profile-photo-box {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--slate-100);
+            margin-bottom: 16px;
+        }
+
+        .profile-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-photo-box:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            inset: auto 0 0 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.35), transparent);
+            padding: 36px 16px 14px;
+            color: #fff;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.92);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .stat-box {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-100);
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .stat-val {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .stat-lbl {
+            font-size: 11px;
+            color: var(--slate-500);
+        }
+
+        .quick-messengers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .quick-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        /* Секции */
+        .section-white {
+            background: #fff;
+            border-top: 1px solid var(--slate-200);
+            border-bottom: 1px solid var(--slate-200);
+            padding: 64px 0;
+        }
+
+        .section-pad {
+            padding: 64px 0;
+        }
+
+        .section-dark {
+            background: var(--slate-900);
+            color: #fff;
+            padding: 64px 0;
+        }
+
+        .sec-head {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 44px;
+        }
+
+        .sec-tag {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .sec-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 6px;
+        }
+
+        .sec-sub {
+            font-size: 15px;
+            color: var(--slate-600);
+            margin-top: 10px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 18px;
+            padding: 24px;
+        }
+
+        .feature-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: var(--slate-600);
+        }
+
+        /* Карточки предметов */
+        .subj-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 28px;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+        }
+
+        .corner-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-bottom-left-radius: 14px;
+        }
+
+        .subj-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+
+        .subj-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .check-list {
+            margin-bottom: 24px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--slate-700);
+            margin-bottom: 12px;
+        }
+
+        .subj-btn {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        /* Форматы (Тёмный блок) */
+        .dark-card {
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid var(--slate-700);
+            padding: 24px;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dark-card-foot {
+            font-size: 12px;
+            font-weight: 600;
+            padding-top: 12px;
+            margin-top: 16px;
+            border-top: 1px solid var(--slate-700);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Калькулятор */
+        .calc-box {
+            background: #fff;
+            border: 1px solid var(--slate-200);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--slate-500);
+            margin-bottom: 8px;
+        }
+
+        .choice-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid var(--slate-200);
+            background: #fff;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+
+        .choice-btn.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .freq-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .freq-btn {
+            padding: 10px 8px;
+            border-radius: 12px;
+            border: 2px solid var(--slate-200);
+            background: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--slate-700);
+            cursor: pointer;
+            transition: 0.15s;
+        }
+
+        .freq-btn.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .calc-summary {
+            background: var(--slate-900);
+            color: #fff;
+            padding: 22px;
+            border-radius: 18px;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--slate-800);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        /* Вопросы (FAQ) */
+        details.faq-item {
+            background: #fff;
+            border: 1px solid var(--slate-200);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        details.faq-item summary {
+            font-weight: 700;
+            color: var(--slate-900);
+            font-size: 15px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        details.faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.faq-item p {
+            font-size: 14px;
+            color: var(--slate-600);
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        /* Контакты и форма */
+        .contact-wrap {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 26px;
+            padding: 24px;
+            color: #fff;
+            box-shadow: 0 15px 30px -10px rgba(79, 70, 229, 0.35);
+        }
+
+        .form-card {
+            background: #fff;
+            color: var(--slate-800);
+            padding: 22px;
+            border-radius: 18px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #CBD5E1;
+            font-size: 14px;
+            background: #fff;
+            color: var(--slate-800);
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary);
+        }
+
+        .btn-tg-full {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            background: #2AABEE;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            transition: 0.2s;
+        }
+        .btn-tg-full:hover { background: #229ED9; }
+
+        .btn-max-full {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #7C3AED, #4F46E5);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-max-full:hover { opacity: 0.95; }
+
+        /* Подвал */
+        .footer {
+            padding: 32px 0;
+            border-top: 1px solid var(--slate-200);
+            font-size: 13px;
+            color: var(--slate-500);
+            text-align: center;
+        }
+
+        /* Плавающая кнопка для телефона и ПК */
+        .fab-wrap {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 60;
+        }
+
+        .fab-menu {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 10px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 16px;
+            border: 1px solid var(--slate-200);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+            min-width: 190px;
+        }
+
+        .fab-menu.open {
+            display: flex;
+        }
+
+        .fab-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+        }
+
+        /* Модальное окно Поделиться / QR */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            border-radius: 24px;
+            max-width: 360px;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Адаптивность для планшетов и ПК */
+        @media (min-width: 640px) {
+            .promo-grid { grid-template-columns: 1fr 1fr; }
+            .hero-btns { flex-direction: row; }
+            .hero-title { font-size: 44px; }
+            .calc-box { padding: 36px; }
+            .contact-wrap { padding: 40px; }
+        }
+
+        @media (min-width: 860px) {
+            .nav { display: flex; }
+            .hero-grid { grid-template-columns: 7fr 5fr; }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .calc-grid { grid-template-columns: 7fr 5fr; }
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 math-bg antialiased selection:bg-primary selection:text-white">
+<body>
 
-    <!-- Шапка (Навигация) -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl overflow-hidden border border-indigo-200 shadow-sm shrink-0">
-                    <img src="photo.jpg" onerror="this.onerror=null; this.src='5375389667211025568.jpg';" alt="Юлия Алексеевна" class="w-full h-full object-cover">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="brand">
+                <div class="brand-avatar">
+                    <img src="5375389667211025568.jpg" onerror="this.onerror=null; this.src='photo.jpg';" alt="Юлия Алексеевна">
                 </div>
                 <div>
-                    <span class="font-bold text-slate-900 block leading-none">Юлия Алексеевна</span>
-                    <span class="text-xs text-slate-500">Математика и физика • 5–7 класс</span>
+                    <span class="brand-title">Юлия Алексеевна</span>
+                    <span class="brand-sub">Математика и физика • 5–7 класс</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-primary transition">О преподавателе</a>
-                <a href="#subjects" class="hover:text-primary transition">Направления</a>
-                <a href="#formats" class="hover:text-primary transition">Форматы</a>
-                <a href="#calculator" class="hover:text-primary transition">Стоимость</a>
-                <a href="#faq" class="hover:text-primary transition">Вопросы</a>
+            <nav class="nav">
+                <a href="#about">О преподавателе</a>
+                <a href="#subjects">Направления</a>
+                <a href="#formats">Форматы</a>
+                <a href="#calculator">Стоимость</a>
+                <a href="#faq">Вопросы</a>
             </nav>
 
-            <div class="flex items-center gap-2">
-                <a href="https://t.me/S_L_e_a_h" target="_blank" rel="noopener noreferrer" title="Написать в Telegram" class="hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-[#2AABEE]/10 text-[#2AABEE] hover:bg-[#2AABEE] hover:text-white transition">
-                    <i data-lucide="send" class="w-4 h-4"></i>
+            <div class="header-actions">
+                <button type="button" onclick="toggleShareModal()" class="btn-icon btn-share" title="Поделиться сайтом или показать QR-код">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                </button>
+                <a href="https://t.me/S_L_e_a_h" target="_blank" rel="noopener noreferrer" class="btn-icon btn-tg-small" title="Написать в Telegram">
+                    TG
                 </a>
-                <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" rel="noopener noreferrer" title="Написать в MAX" class="hidden sm:flex items-center justify-center px-3 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold text-xs hover:bg-violet-600 hover:text-white transition">
+                <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" rel="noopener noreferrer" class="btn-icon btn-max-small" title="Написать в MAX">
                     MAX
                 </a>
-                <a href="#contact" class="bg-primary hover:bg-primaryDark text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-primary/20 transition flex items-center gap-2">
+                <a href="#contact" class="btn-primary">
                     <span>Записаться</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Главный экран (Hero) -->
-    <section class="relative pt-10 pb-20 md:pt-16 md:pb-24 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-12 gap-10 items-center">
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
                 
-                <!-- Левая колонка с текстом -->
-                <div class="md:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200/80 text-primary px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-secondary"></i>
+                <!-- Текстовая часть -->
+                <div>
+                    <div class="badge-loc">
+                        <svg class="icon" style="color: var(--secondary); width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         <span>Очно в г. Новороссийск и Онлайн по всей России</span>
                     </div>
 
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                        Понятная <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">математика и физика</span> без стресса и зубрёжки
+                    <h1 class="hero-title">
+                        Понятная <span class="gradient-text">математика и физика</span> без стресса и зубрёжки
                     </h1>
 
-                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                    <p class="hero-desc">
                         Здравствуйте! Меня зовут <strong>Стороженко Юлия Алексеевна</strong>. Я действующий школьный преподаватель и репетитор. Помогаю ученикам <strong>5–7 классов</strong> разобраться в сложных темах, полюбить точные науки и уверенно получать «4» и «5».
                     </p>
 
-                    <!-- Плашки с акцией -->
-                    <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-                        <div class="flex items-center gap-2 text-amber-600 font-bold text-sm uppercase tracking-wider">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            <span>Специальное предложение для новых учеников на выбор:</span>
+                    <!-- Акции -->
+                    <div class="promo-box">
+                        <div class="promo-header">
+                            <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path></svg>
+                            <span>Бонус для новых учеников на выбор:</span>
                         </div>
-                        <div class="grid sm:grid-cols-2 gap-3">
-                            <div class="flex items-start gap-3 p-3 rounded-xl bg-amber-50/70 border border-amber-200/60">
-                                <div class="bg-amber-500 text-white font-bold text-xs px-2 py-1 rounded-md shrink-0 mt-0.5">0 ₽</div>
-                                <div class="text-xs sm:text-sm text-slate-700">
-                                    <strong class="text-slate-900 block">Урок-диагностика (15–30 мин)</strong>
-                                    Познакомимся, найдём пробелы в знаниях и составим план.
+                        <div class="promo-grid">
+                            <div class="promo-item promo-amber">
+                                <span class="promo-tag" style="background: var(--amber);">0 ₽</span>
+                                <div>
+                                    <strong style="display:block; color: var(--slate-900);">Урок-диагностика (15–30 мин)</strong>
+                                    <span style="color: var(--slate-600);">Познакомимся, найдём пробелы в знаниях и составим план.</span>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200/60">
-                                <div class="bg-primary text-white font-bold text-xs px-2 py-1 rounded-md shrink-0 mt-0.5">-50%</div>
-                                <div class="text-xs sm:text-sm text-slate-700">
-                                    <strong class="text-slate-900 block">Первый урок за 500 ₽</strong>
-                                    Полноценное занятие (60 минут) со скидкой 50%.
+                            <div class="promo-item promo-indigo">
+                                <span class="promo-tag" style="background: var(--primary);">-50%</span>
+                                <div>
+                                    <strong style="display:block; color: var(--slate-900);">Первый урок за 500 ₽</strong>
+                                    <span style="color: var(--slate-600);">Полноценное занятие (60 минут) со скидкой 50%.</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Кнопки действия -->
-                    <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
-                        <a href="#contact" class="bg-primary hover:bg-primaryDark text-white font-semibold px-7 py-4 rounded-2xl shadow-lg shadow-primary/25 transition flex items-center justify-center gap-2.5 text-base">
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn-primary btn-lg">
                             <span>Записаться на занятие</span>
-                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <svg class="icon" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                         </a>
-                        <a href="#calculator" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-6 py-4 rounded-2xl transition flex items-center justify-center gap-2 text-base">
-                            <i data-lucide="calculator" class="w-5 h-5 text-primary"></i>
+                        <a href="#calculator" class="btn-outline">
+                            <svg class="icon" style="color: var(--primary);" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
                             <span>Рассчитать стоимость</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Правая колонка (Карточка с фото преподавателя) -->
-                <div class="md:col-span-5">
-                    <div class="relative mx-auto max-w-sm md:max-w-none">
-                        <!-- Декоративный фон -->
-                        <div class="absolute -inset-2 bg-gradient-to-tr from-primary/25 to-secondary/25 rounded-3xl blur-xl -z-10"></div>
-                        
-                        <div class="bg-white rounded-3xl border border-slate-200/90 p-5 shadow-xl space-y-5">
-                            <!-- Фотография -->
-                            <div class="aspect-square rounded-2xl bg-slate-100 relative overflow-hidden shadow-inner group">
-                                <img 
-                                    src="photo.jpg" 
-                                    onerror="this.onerror=null; this.src='5375389667211025568.jpg';" 
-                                    alt="Стороженко Юлия Алексеевна — репетитор по математике и физике" 
-                                    class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-                                >
-                                <!-- Градиент снизу для читаемости подписи -->
-                                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent p-4 pt-12 text-white">
-                                    <div class="inline-flex items-center gap-1.5 bg-emerald-500/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-full text-[11px] font-semibold mb-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                                        Набор учеников открыт
-                                    </div>
-                                    <p class="font-bold text-lg leading-tight">Стороженко Юлия Алексеевна</p>
-                                    <p class="text-xs text-slate-200">Школьный преподаватель и репетитор</p>
+                <!-- Карточка с фотографией -->
+                <div class="profile-card-wrap">
+                    <div class="profile-card">
+                        <div class="profile-photo-box">
+                            <img src="5375389667211025568.jpg" onerror="this.onerror=null; this.src='photo.jpg';" alt="Стороженко Юлия Алексеевна">
+                            <div class="photo-overlay">
+                                <div class="status-pill">
+                                    <span class="pulse-dot"></span>
+                                    <span>Набор учеников открыт</span>
                                 </div>
+                                <div style="font-weight: 700; font-size: 18px; line-height: 1.2;">Стороженко Юлия Алексеевна</div>
+                                <div style="font-size: 12px; color: #E2E8F0; margin-top: 2px;">Школьный преподаватель и репетитор</div>
                             </div>
+                        </div>
 
-                            <!-- Короткие факты в карточке -->
-                            <div class="grid grid-cols-2 gap-3 text-center">
-                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                                    <div class="text-primary font-extrabold text-xl">5–7 класс</div>
-                                    <div class="text-xs text-slate-500 mt-0.5">Математика и Физика</div>
-                                </div>
-                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                                    <div class="text-secondary font-extrabold text-xl">от 1000 ₽</div>
-                                    <div class="text-xs text-slate-500 mt-0.5">За 60 минут урока</div>
-                                </div>
+                        <div class="stats-row">
+                            <div class="stat-box">
+                                <div class="stat-val" style="color: var(--primary);">5–7 класс</div>
+                                <div class="stat-lbl">Математика и Физика</div>
                             </div>
+                            <div class="stat-box">
+                                <div class="stat-val" style="color: var(--secondary);">от 1000 ₽</div>
+                                <div class="stat-lbl">За 60 минут урока</div>
+                            </div>
+                        </div>
 
-                            <!-- Быстрые ссылки на мессенджеры прямо под фото -->
-                            <div class="grid grid-cols-2 gap-2.5 pt-1">
-                                <a href="https://t.me/S_L_e_a_h" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#2AABEE]/10 hover:bg-[#2AABEE] text-[#2AABEE] hover:text-white font-semibold text-xs transition">
-                                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
-                                    <span>Telegram</span>
-                                </a>
-                                <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-violet-100 hover:bg-violet-600 text-violet-700 hover:text-white font-semibold text-xs transition">
-                                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                                    <span>Написать в MAX</span>
-                                </a>
-                            </div>
+                        <div class="quick-messengers">
+                            <a href="https://t.me/S_L_e_a_h" target="_blank" rel="noopener noreferrer" class="quick-btn btn-tg-small">
+                                <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                <span>Telegram</span>
+                            </a>
+                            <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" rel="noopener noreferrer" class="quick-btn btn-max-small">
+                                <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                <span>Написать в MAX</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -187,140 +1059,125 @@
         </div>
     </section>
 
-    <!-- Почему именно 5-7 класс и преимущества работы со школьным учителем -->
-    <section id="about" class="py-16 bg-white border-y border-slate-200/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Подход к обучению</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Почему со мной детям спокойно и понятно?</h2>
-                <p class="text-slate-600 mt-3">5–7 классы — это фундамент. Если упустить базу сейчас, в старших классах и на ОГЭ придётся в разы сложнее. Моя задача — вовремя объяснить сложные вещи простым языком.</p>
+    <!-- Преимущества -->
+    <section id="about" class="section-white">
+        <div class="container">
+            <div class="sec-head">
+                <span class="sec-tag">Подход к обучению</span>
+                <h2 class="sec-title">Почему со мной детям спокойно и понятно?</h2>
+                <p class="sec-sub">5–7 классы — это фундамент. Если упустить базу сейчас, в старших классах и на ОГЭ придётся в разы сложнее. Моя задача — вовремя объяснить сложные вещи простым языком.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Преимущество 1 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-primary/40 transition">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-primary flex items-center justify-center mb-4">
-                        <i data-lucide="school" class="w-6 h-6"></i>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--primary-light); color: var(--primary);">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Знаю школьную кухню изнутри</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Я работаю в школе и точно знаю актуальные требования ФГОС, критерии оценивания контрольных, ВПР и то, как именно требуют оформлять задачи на уроках.
-                    </p>
+                    <h3 class="feature-title">Знаю школьную кухню изнутри</h3>
+                    <p class="feature-text">Я работаю в школе и точно знаю актуальные требования ФГОС, критерии оценивания контрольных, ВПР и то, как именно требуют оформлять задачи на уроках.</p>
                 </div>
 
-                <!-- Преимущество 2 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-primary/40 transition">
-                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-secondary flex items-center justify-center mb-4">
-                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--secondary-light); color: var(--secondary);">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Дружелюбная атмосфера без страха</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        На моих занятиях не страшно ошибиться или переспросить 5 раз. Мы разбираем тему до тех пор, пока у ребёнка в голове не сложится полная логическая картинка.
-                    </p>
+                    <h3 class="feature-title">Дружелюбная атмосфера без страха</h3>
+                    <p class="feature-text">На моих занятиях не страшно ошибиться или переспросить 5 раз. Мы разбираем тему до тех пор, пока у ребёнка в голове не сложится полная логическая картинка.</p>
                 </div>
 
-                <!-- Преимущество 3 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-primary/40 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
-                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--amber-light); color: #D97706;">
+                        <svg class="icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Обратная связь для родителей</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Вы всегда в курсе прогресса: регулярно сообщаю, какие темы мы прошли, где были трудности и каких результатов уже удалось достичь в школе.
-                    </p>
+                    <h3 class="feature-title">Обратная связь для родителей</h3>
+                    <p class="feature-text">Вы всегда в курсе прогресса: регулярно сообщаю, какие темы мы прошли, где были трудности и каких результатов уже удалось достичь в школе.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Направления подготовки -->
-    <section id="subjects" class="py-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Программы</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">На чём мы делаем упор</h2>
-                <p class="text-slate-600 mt-2">Программа подбирается индивидуально под учебник и темп вашего ребёнка.</p>
+    <!-- Предметы -->
+    <section id="subjects" class="section-pad">
+        <div class="container">
+            <div class="sec-head">
+                <span class="sec-tag">Программы</span>
+                <h2 class="sec-title">На чём мы делаем упор</h2>
+                <p class="sec-sub">Программа подбирается индивидуально под учебник и темп вашего ребёнка.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Карточка Математики -->
-                <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-indigo-50 text-primary text-xs font-bold px-4 py-2 rounded-bl-2xl border-b border-l border-indigo-100">
-                        5, 6 и 7 класс
-                    </div>
+            <div class="grid-2">
+                <!-- Математика -->
+                <div class="subj-card">
+                    <div class="corner-badge" style="background: var(--primary-light); color: var(--primary);">5, 6 и 7 класс</div>
                     <div>
-                        <div class="flex items-center gap-3.5 mb-5">
-                            <div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shadow-md shadow-primary/20">
-                                <i data-lucide="sigma" class="w-6 h-6"></i>
+                        <div class="subj-head">
+                            <div class="subj-icon" style="background: var(--primary);">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M18 7V4H6l6 8-6 8h12v-3"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-extrabold text-slate-900">Математика (Алгебра и Геометрия)</h3>
-                                <p class="text-xs text-slate-500">Плавный переход из начальной школы и старт в 7 классе</p>
+                                <h3 style="font-size: 20px; font-weight: 800; color: var(--slate-900);">Математика (Алгебра и Геометрия)</h3>
+                                <p style="font-size: 12px; color: var(--slate-500);">Плавный переход из начальной школы и старт в 7 классе</p>
                             </div>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-slate-700 mb-6">
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                        <ul class="check-list">
+                            <li>
+                                <svg class="icon" style="color: var(--primary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 <span><strong>5–6 класс:</strong> обыкновенные и десятичные дроби, проценты, пропорции, отрицательные числа, решение текстовых задач и уравнений.</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                            <li>
+                                <svg class="icon" style="color: var(--primary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 <span><strong>7 класс (Алгебра):</strong> формулы сокращённого умножения, линейные функции и графики, системы уравнений, степени.</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                            <li>
+                                <svg class="icon" style="color: var(--primary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 <span><strong>7 класс (Геометрия с нуля):</strong> учимся понимать чертежи, доказывать теоремы, работать с признаками равенства треугольников и углами.</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
-                                <span><strong>Помощь с ДЗ и ВПР:</strong> подготовка к контрольным и всероссийским проверочным работам без нервов.</span>
+                            <li>
+                                <svg class="icon" style="color: var(--primary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span><strong>Помощь с ДЗ и ВПР:</strong> подготовка к контрольным и проверочным работам без нервов.</span>
                             </li>
                         </ul>
                     </div>
-
-                    <a href="#contact" onclick="selectSubjectInForm('Математика (5 класс)')" class="w-full py-3.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-primary font-semibold text-sm text-center transition">
+                    <a href="#contact" onclick="selectSubjectInForm('Математика (5 класс)')" class="subj-btn" style="background: var(--primary-light); color: var(--primary);">
                         Записаться на математику →
                     </a>
                 </div>
 
-                <!-- Карточка Физики -->
-                <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-sky-50 text-secondary text-xs font-bold px-4 py-2 rounded-bl-2xl border-b border-l border-sky-100">
-                        7 класс (Старт предмета)
-                    </div>
+                <!-- Физика -->
+                <div class="subj-card">
+                    <div class="corner-badge" style="background: var(--secondary-light); color: var(--secondary);">7 класс (Старт предмета)</div>
                     <div>
-                        <div class="flex items-center gap-3.5 mb-5">
-                            <div class="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center shadow-md shadow-secondary/20">
-                                <i data-lucide="atom" class="w-6 h-6"></i>
+                        <div class="subj-head">
+                            <div class="subj-icon" style="background: var(--secondary);">
+                                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-extrabold text-slate-900">Физика с нуля</h3>
-                                <p class="text-xs text-slate-500">Сделаем новый школьный предмет любимым и понятным</p>
+                                <h3 style="font-size: 20px; font-weight: 800; color: var(--slate-900);">Физика с нуля</h3>
+                                <p style="font-size: 12px; color: var(--slate-500);">Сделаем новый школьный предмет любимым и понятным</p>
                             </div>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-slate-700 mb-6">
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0 mt-0.5"></i>
+                        <ul class="check-list">
+                            <li>
+                                <svg class="icon" style="color: var(--secondary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 <span><strong>Уверенный старт в 7 классе:</strong> объясняю физический смысл явлений на примерах из реальной жизни, а не сухими параграфами.</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0 mt-0.5"></i>
-                                <span><strong>Оформление и система СИ:</strong> учимся правильно записывать «Дано», переводить единицы измерения и выражать неизвестные величины из формул.</span>
+                            <li>
+                                <svg class="icon" style="color: var(--secondary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span><strong>Оформление и система СИ:</strong> учимся правильно записывать «Дано», переводить единицы измерения и выражать величины из формул.</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0 mt-0.5"></i>
-                                <span><strong>Все ключевые темы 7 класса:</strong> механическое движение, плотность, силы (тяжести, упругости, трения), давление твёрдых тел, жидкостей и газов, закон Архимеда, работа и мощность.</span>
+                            <li>
+                                <svg class="icon" style="color: var(--secondary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span><strong>Все темы 7 класса:</strong> движение, плотность, силы, давление твёрдых тел, жидкостей и газов, закон Архимеда, работа и мощность.</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0 mt-0.5"></i>
-                                <span><strong>Подготовка к лабораторным и ВПР:</strong> разбираем типовые задачи и эксперименты.</span>
+                            <li>
+                                <svg class="icon" style="color: var(--secondary); margin-top:2px;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span><strong>Лабораторные и ВПР:</strong> разбираем типовые задачи и эксперименты.</span>
                             </li>
                         </ul>
                     </div>
-
-                    <a href="#contact" onclick="selectSubjectInForm('Физика (7 класс)')" class="w-full py-3.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-secondary font-semibold text-sm text-center transition">
+                    <a href="#contact" onclick="selectSubjectInForm('Физика (7 класс)')" class="subj-btn" style="background: var(--secondary-light); color: var(--secondary);">
                         Записаться на физику →
                     </a>
                 </div>
@@ -328,231 +1185,195 @@
         </div>
     </section>
 
-    <!-- Форматы обучения -->
-    <section id="formats" class="py-16 bg-slate-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-sky-400 font-semibold text-sm uppercase tracking-wider">Локация и онлайн</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold mt-2">Как проходят занятия?</h2>
-                <p class="text-slate-400 mt-2">Вы можете выбрать наиболее комфортный для ребёнка вариант или комбинировать их.</p>
+    <!-- Форматы -->
+    <section id="formats" class="section-dark">
+        <div class="container">
+            <div class="sec-head">
+                <span class="sec-tag" style="color: #38BDF8;">Локация и онлайн</span>
+                <h2 class="sec-title" style="color: #fff;">Как проходят занятия?</h2>
+                <p class="sec-sub" style="color: var(--slate-400);">Вы можете выбрать наиболее комфортный для ребёнка вариант или комбинировать их.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Онлайн -->
-                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex flex-col justify-between">
+            <div class="grid-3">
+                <div class="dark-card">
                     <div>
-                        <div class="w-11 h-11 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4">
-                            <i data-lucide="monitor" class="w-6 h-6"></i>
+                        <div class="feature-icon" style="background: rgba(79, 70, 229, 0.2); color: #818CF8;">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                         </div>
-                        <h3 class="text-lg font-bold mb-2">Онлайн-занятия</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            Занимаемся из любой точки мира. Используем интерактивную онлайн-доску, где мы пишем и чертим одновременно с учеником. Не нужно тратить время на дорогу!
-                        </p>
+                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Онлайн-занятия</h3>
+                        <p style="font-size: 14px; color: #CBD5E1;">Занимаемся из любой точки мира. Используем интерактивную онлайн-доску, где мы пишем и чертим одновременно с учеником. Не нужно тратить время на дорогу!</p>
                     </div>
-                    <div class="text-xs text-indigo-300 font-medium flex items-center gap-1.5 pt-3 border-t border-slate-700/80">
-                        <i data-lucide="globe" class="w-4 h-4"></i> Доступно для любого города
+                    <div class="dark-card-foot" style="color: #A5B4FC;">
+                        <span>🌐 Доступно для любого города</span>
                     </div>
                 </div>
 
-                <!-- Офлайн на дому -->
-                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex flex-col justify-between">
+                <div class="dark-card">
                     <div>
-                        <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4">
-                            <i data-lucide="home" class="w-6 h-6"></i>
+                        <div class="feature-icon" style="background: rgba(14, 165, 233, 0.2); color: #38BDF8;">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                         </div>
-                        <h3 class="text-lg font-bold mb-2">Очно (на дому)</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            Живой контакт с преподавателем в спокойной домашней обстановке. Отлично подходит для ребят, которым сложнее удерживать внимание перед экраном компьютера.
-                        </p>
+                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Очно (на дому)</h3>
+                        <p style="font-size: 14px; color: #CBD5E1;">Живой контакт с преподавателем в спокойной домашней обстановке. Отлично подходит для ребят, которым сложнее удерживать внимание перед экраном.</p>
                     </div>
-                    <div class="text-xs text-sky-300 font-medium flex items-center gap-1.5 pt-3 border-t border-slate-700/80">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i> г. Новороссийск
+                    <div class="dark-card-foot" style="color: #7DD3FC;">
+                        <span>📍 г. Новороссийск</span>
                     </div>
                 </div>
 
-                <!-- Офлайн в школе -->
-                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex flex-col justify-between">
+                <div class="dark-card">
                     <div>
-                        <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
-                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        <div class="feature-icon" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24;">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                         </div>
-                        <h3 class="text-lg font-bold mb-2">Очно в школе</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            Настоящая рабочая атмосфера учебного кабинета с классической школьной доской. Настраивает на рабочий лад и помогает увереннее чувствовать себя у доски на уроках.
-                        </p>
+                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Очно в школе</h3>
+                        <p style="font-size: 14px; color: #CBD5E1;">Настоящая рабочая атмосфера учебного кабинета с классической школьной доской. Настраивает на рабочий лад и помогает увереннее отвечать у доски.</p>
                     </div>
-                    <div class="text-xs text-amber-300 font-medium flex items-center gap-1.5 pt-3 border-t border-slate-700/80">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i> г. Новороссийск (по договорённости)
+                    <div class="dark-card-foot" style="color: #FDE68A;">
+                        <span>📍 г. Новороссийск (по договорённости)</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Интерактивный калькулятор стоимости -->
-    <section id="calculator" class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-lg">
-                <div class="text-center mb-8">
-                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">Прозрачные условия</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Калькулятор стоимости занятий</h2>
-                    <p class="text-sm text-slate-500 mt-1">Базовая ставка — от 1000 ₽ за полноценный астрономический час (60 минут)</p>
+    <!-- Калькулятор стоимости -->
+    <section id="calculator" class="section-pad">
+        <div class="container-md">
+            <div class="calc-box">
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <span class="sec-tag">Прозрачные условия</span>
+                    <h2 style="font-size: 26px; font-weight: 800; color: var(--slate-900); margin-top: 4px;">Калькулятор стоимости занятий</h2>
+                    <p style="font-size: 14px; color: var(--slate-500); margin-top: 4px;">Базовая ставка — от 1000 ₽ за полноценный астрономический час (60 минут)</p>
                 </div>
 
-                <div class="grid md:grid-cols-12 gap-8 items-center">
-                    <div class="md:col-span-7 space-y-5">
-                        <!-- Выбор первого шага -->
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">1. Выберите бонус для знакомства:</label>
-                            <div class="grid grid-cols-2 gap-2.5">
-                                <button type="button" onclick="setTrial('diag')" id="btn-diag" class="p-3 rounded-xl border-2 border-primary bg-indigo-50/60 text-left transition">
-                                    <div class="font-bold text-sm text-slate-900">Диагностика 0 ₽</div>
-                                    <div class="text-xs text-slate-500">15–30 минут бесплатно</div>
+                <div class="calc-grid">
+                    <div>
+                        <div style="margin-bottom: 20px;">
+                            <label class="calc-label">1. Выберите бонус для знакомства:</label>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                <button type="button" onclick="setTrial('diag')" id="btn-diag" class="choice-btn active">
+                                    <div style="font-weight: 700; font-size: 14px; color: var(--slate-900);">Диагностика 0 ₽</div>
+                                    <div style="font-size: 12px; color: var(--slate-500);">15–30 минут бесплатно</div>
                                 </button>
-                                <button type="button" onclick="setTrial('half')" id="btn-half" class="p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 text-left transition">
-                                    <div class="font-bold text-sm text-slate-900">1-й урок со скидкой 50%</div>
-                                    <div class="text-xs text-slate-500">60 минут за 500 ₽</div>
+                                <button type="button" onclick="setTrial('half')" id="btn-half" class="choice-btn">
+                                    <div style="font-weight: 700; font-size: 14px; color: var(--slate-900);">1-й урок со скидкой 50%</div>
+                                    <div style="font-size: 12px; color: var(--slate-500);">60 минут за 500 ₽</div>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Частота занятий -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">2. Рекомендуемая регулярность в неделю:</label>
-                            <div class="grid grid-cols-3 gap-2.5">
-                                <button type="button" onclick="setFreq(1)" id="freq-1" class="py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-700 hover:border-slate-300 transition">
-                                    1 раз / нед
-                                </button>
-                                <button type="button" onclick="setFreq(2)" id="freq-2" class="py-2.5 px-3 rounded-xl border-2 border-primary bg-indigo-50/60 font-semibold text-sm text-primary transition">
-                                    2 раза / нед
-                                </button>
-                                <button type="button" onclick="setFreq(3)" id="freq-3" class="py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-700 hover:border-slate-300 transition">
-                                    3 раза / нед
-                                </button>
+                            <label class="calc-label">2. Рекомендуемая регулярность в неделю:</label>
+                            <div class="freq-grid">
+                                <button type="button" onclick="setFreq(1)" id="freq-1" class="freq-btn">1 раз / нед</button>
+                                <button type="button" onclick="setFreq(2)" id="freq-2" class="freq-btn active">2 раза / нед</button>
+                                <button type="button" onclick="setFreq(3)" id="freq-3" class="freq-btn">3 раза / нед</button>
                             </div>
-                            <p id="freq-hint" class="text-xs text-slate-500 mt-2">✨ 2 раза в неделю — оптимальный темп, чтобы и закрывать пробелы, и идти вровень со школьной программой.</p>
+                            <p id="freq-hint" style="font-size: 12px; color: var(--slate-500); margin-top: 10px;">
+                                ✨ 2 раза в неделю — оптимальный темп, чтобы и закрывать пробелы, и идти вровень со школьной программой.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Итог калькулятора -->
-                    <div class="md:col-span-5 bg-slate-900 text-white p-6 rounded-2xl space-y-4">
-                        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                            <span class="text-xs text-slate-400">Старт обучения:</span>
-                            <span id="calc-trial-Result" class="font-bold text-amber-400 text-sm">Бесплатная диагностика (0 ₽)</span>
+                    <div class="calc-summary">
+                        <div class="calc-row">
+                            <span style="font-size: 12px; color: var(--slate-400);">Старт обучения:</span>
+                            <span id="calc-trial-Result" style="font-weight: 700; color: #FBBF24; font-size: 13px;">Бесплатная диагностика (0 ₽)</span>
                         </div>
-                        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                            <span class="text-xs text-slate-400">Разовое занятие (60 мин):</span>
-                            <span class="font-bold text-lg">от 1 000 ₽</span>
+                        <div class="calc-row">
+                            <span style="font-size: 12px; color: var(--slate-400);">Разовое занятие (60 мин):</span>
+                            <span style="font-weight: 700; font-size: 17px;">от 1 000 ₽</span>
                         </div>
-                        <div>
-                            <span class="text-xs text-slate-400 block">Ориентировочно в месяц (<span id="calc-lessons-count">8</span> зан.):</span>
-                            <span id="calc-month-total" class="text-2xl font-extrabold text-white">8 000 ₽</span>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">Возможна поурочная оплата</span>
+                        <div style="margin-bottom: 16px;">
+                            <span style="font-size: 12px; color: var(--slate-400); display: block;">Ориентировочно в месяц (<span id="calc-lessons-count">8</span> зан.):</span>
+                            <span id="calc-month-total" style="font-size: 26px; font-weight: 800;">8 000 ₽</span>
+                            <span style="font-size: 11px; color: var(--slate-400); display: block;">Возможна комфортная поурочная оплата</span>
                         </div>
-                        <a href="#contact" class="block w-full py-3 bg-primary hover:bg-primaryDark text-center rounded-xl font-semibold text-sm transition shadow-md">
-                            Забронировать место
-                        </a>
+                        <a href="#contact" class="btn-primary" style="width: 100%; padding: 12px;">Забронировать место</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Частые вопросы (FAQ) -->
-    <section id="faq" class="py-12">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-center text-slate-900 mb-8">Частые вопросы родителей</h2>
+    <!-- Частые вопросы -->
+    <section id="faq" style="padding: 20px 0 64px;">
+        <div class="container-md">
+            <h2 style="font-size: 26px; font-weight: 800; text-align: center; color: var(--slate-900); margin-bottom: 28px;">Частые вопросы родителей</h2>
             
-            <div class="space-y-3">
-                <details class="group bg-white rounded-2xl border border-slate-200 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-                    <summary class="flex items-center justify-between font-bold text-slate-900">
-                        <span>Что выбрать: бесплатную диагностику или первый урок со скидкой 50%?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                        Если вы хотите сначала просто познакомиться, проверить техническую связь (для онлайна) и за 15–30 минут определить уровень знаний — выбирайте <strong>бесплатную диагностику</strong>. Если у ребёнка уже завтра контрольная или нужно сразу разобрать конкретную сложную тему за полноценный час — отлично подойдёт <strong>первый урок за 500 ₽ (скидка 50%)</strong>.
-                    </p>
-                </details>
+            <details class="faq-item">
+                <summary>
+                    <span>Что выбрать: бесплатную диагностику или первый урок со скидкой 50%?</span>
+                    <span>▼</span>
+                </summary>
+                <p>Если вы хотите сначала просто познакомиться, проверить техническую связь (для онлайна) и за 15–30 минут определить уровень знаний — выбирайте <strong>бесплатную диагностику</strong>. Если у ребёнка скоро контрольная или нужно сразу разобрать конкретную сложную тему за полноценный час — отлично подойдёт <strong>первый урок за 500 ₽ (скидка 50%)</strong>.</p>
+            </details>
 
-                <details class="group bg-white rounded-2xl border border-slate-200 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-                    <summary class="flex items-center justify-between font-bold text-slate-900">
-                        <span>Что нужно для онлайн-занятий?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                        Достаточно компьютера, ноутбука или планшета со стабильным интернетом, наушников с микрофоном и обычной рабочей тетради. Все формулы, чертежи и схемы мы наглядно разбираем на виртуальной интерактивной доске.
-                    </p>
-                </details>
+            <details class="faq-item">
+                <summary>
+                    <span>Что нужно для онлайн-занятий?</span>
+                    <span>▼</span>
+                </summary>
+                <p>Достаточно компьютера, ноутбука или планшета со стабильным интернетом, наушников с микрофоном и обычной рабочей тетради. Все формулы, чертежи и схемы мы наглядно разбираем на виртуальной интерактивной доске.</p>
+            </details>
 
-                <details class="group bg-white rounded-2xl border border-slate-200 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-                    <summary class="flex items-center justify-between font-bold text-slate-900">
-                        <span>Можно ли заниматься сразу и математикой, и физикой (для 7 класса)?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                        Да, конечно! Это очень частый и удобный запрос у семиклассников, так как физика в 7 классе тесно связана с умением решать уравнения, работать с пропорциями и формулами из алгебры. Мы можем чередовать предметы или распределять время по необходимости.
-                    </p>
-                </details>
-            </div>
+            <details class="faq-item">
+                <summary>
+                    <span>Можно ли заниматься сразу и математикой, и физикой (для 7 класса)?</span>
+                    <span>▼</span>
+                </summary>
+                <p>Да, конечно! Это очень частый и удобный запрос у семиклассников, так как физика в 7 классе тесно связана с умением решать уравнения, работать с пропорциями и формулами из алгебры. Мы можем чередовать предметы или распределять время по необходимости.</p>
+            </details>
         </div>
     </section>
 
-    <!-- Блок записи и Контакты (Telegram и MAX) -->
-    <section id="contact" class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="bg-gradient-to-br from-indigo-600 to-sky-600 rounded-3xl p-6 sm:p-10 text-white shadow-xl">
-                <div class="grid md:grid-cols-12 gap-8 items-center">
+    <!-- Блок записи -->
+    <section id="contact" style="padding-bottom: 70px;">
+        <div class="container-md">
+            <div class="contact-wrap">
+                <div class="calc-grid">
                     
-                    <div class="md:col-span-6 space-y-4">
-                        <span class="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <div>
+                        <span style="display:inline-block; background: rgba(255,255,255,0.2); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;">
                             Быстрая связь
                         </span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight">
+                        <h2 style="font-size: 28px; font-weight: 800; line-height: 1.2; margin-bottom: 12px;">
                             Запишитесь на знакомство прямо сейчас
                         </h2>
-                        <p class="text-indigo-100 text-sm leading-relaxed">
-                            Заполните короткую анкету справа — сайт сам сформирует сообщение, и вы сможете отправить его мне в один клик через <strong>Telegram</strong> или мессенджер <strong>MAX</strong>.
+                        <p style="font-size: 14px; color: #E0E7FF; margin-bottom: 20px;">
+                            Заполните короткую анкету — сайт сам сформирует сообщение, и вы сможете отправить его мне в один клик через <strong>Telegram</strong> или мессенджер <strong>MAX</strong>.
                         </p>
                         
-                        <div class="pt-2 space-y-2.5 text-sm text-indigo-100">
-                            <div class="flex items-center gap-2.5">
-                                <i data-lucide="user-check" class="w-5 h-5 text-amber-300 shrink-0"></i>
-                                <span>Стороженко Юлия Алексеевна</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <i data-lucide="map-pin" class="w-5 h-5 text-amber-300 shrink-0"></i>
-                                <span>г. Новороссийск (очно) / Онлайн</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <i data-lucide="at-sign" class="w-5 h-5 text-amber-300 shrink-0"></i>
-                                <span>Telegram: <a href="https://t.me/S_L_e_a_h" target="_blank" class="underline hover:text-white">@S_L_e_a_h</a></span>
-                            </div>
+                        <div style="font-size: 14px; color: #E0E7FF; display: flex; flex-direction: column; gap: 8px;">
+                            <div>👩‍🏫 Стороженко Юлия Алексеевна</div>
+                            <div>📍 г. Новороссийск (очно) / Онлайн</div>
+                            <div>✈️ Telegram: <a href="https://t.me/S_L_e_a_h" target="_blank" style="text-decoration: underline; color: #fff;">@S_L_e_a_h</a></div>
                         </div>
                     </div>
 
-                    <!-- Конструктор заявки -->
-                    <div class="md:col-span-6 bg-white text-slate-800 p-6 rounded-2xl shadow-lg space-y-4">
-                        <h3 class="font-bold text-slate-900 text-base">Конструктор быстрой заявки</h3>
+                    <div class="form-card">
+                        <h3 style="font-weight: 700; font-size: 16px; color: var(--slate-900); margin-bottom: 14px;">Конструктор быстрой заявки</h3>
 
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-500 mb-1">Ваше имя (или имя ученика)</label>
-                            <input type="text" id="form-name" placeholder="Например: Елена, мама Артёма" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary">
+                        <div style="margin-bottom: 12px;">
+                            <label style="display:block; font-size: 12px; font-weight: 600; color: var(--slate-500); margin-bottom: 4px;">Ваше имя (или имя ученика)</label>
+                            <input type="text" id="form-name" placeholder="Например: Елена, мама Артёма" class="input-field">
                         </div>
 
-                        <div class="grid grid-cols-2 gap-3">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1">Предмет и класс</label>
-                                <select id="form-subject" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:border-primary">
-                                    <option value="Математика (5 класс)">Математика (5 класс)</option>
-                                    <option value="Математика (6 класс)">Математика (6 класс)</option>
-                                    <option value="Математика (7 класс)">Математика (7 класс)</option>
-                                    <option value="Физика (7 класс)">Физика (7 класс)</option>
-                                    <option value="Математика + Физика (7 кл)">Математика + Физика (7 кл)</option>
+                                <label style="display:block; font-size: 12px; font-weight: 600; color: var(--slate-500); margin-bottom: 4px;">Предмет и класс</label>
+                                <select id="form-subject" class="input-field">
+                                    <option value="Математика (5 класс)">Математика (5 кл)</option>
+                                    <option value="Математика (6 класс)">Математика (6 кл)</option>
+                                    <option value="Математика (7 класс)">Математика (7 кл)</option>
+                                    <option value="Физика (7 класс)">Физика (7 кл)</option>
+                                    <option value="Математика + Физика (7 кл)">Матем. + Физика (7 кл)</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1">Формат</label>
-                                <select id="form-format" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:border-primary">
+                                <label style="display:block; font-size: 12px; font-weight: 600; color: var(--slate-500); margin-bottom: 4px;">Формат</label>
+                                <select id="form-format" class="input-field">
                                     <option value="Онлайн">Онлайн</option>
                                     <option value="Очно (Новороссийск, на дому)">Очно (на дому)</option>
                                     <option value="Очно (Новороссийск, в школе)">Очно (в школе)</option>
@@ -560,29 +1381,26 @@
                             </div>
                         </div>
 
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-500 mb-1">С чего начнём?</label>
-                            <select id="form-promo" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:border-primary">
+                        <div style="margin-bottom: 16px;">
+                            <label style="display:block; font-size: 12px; font-weight: 600; color: var(--slate-500); margin-bottom: 4px;">С чего начнём?</label>
+                            <select id="form-promo" class="input-field">
                                 <option value="Бесплатная диагностика (15-30 мин)">Бесплатная диагностика (15–30 мин)</option>
                                 <option value="Первый урок со скидкой 50% (500 ₽)">Первый урок со скидкой 50% (500 ₽)</option>
                             </select>
                         </div>
 
-                        <!-- Кнопки мессенджеров -->
-                        <div class="pt-2 space-y-2.5">
-                            <button type="button" onclick="sendToMessenger('telegram')" class="w-full py-3 px-4 rounded-xl bg-[#2AABEE] hover:bg-[#229ED9] text-white font-semibold text-sm flex items-center justify-center gap-2 transition shadow-sm">
-                                <i data-lucide="send" class="w-4 h-4"></i>
-                                <span>Отправить заявку в Telegram</span>
-                            </button>
+                        <button type="button" onclick="sendToMessenger('telegram')" class="btn-tg-full">
+                            <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            <span>Отправить заявку в Telegram</span>
+                        </button>
 
-                            <button type="button" onclick="sendToMessenger('max')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition shadow-sm">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                <span>Написать в мессенджер MAX</span>
-                            </button>
-                        </div>
+                        <button type="button" onclick="sendToMessenger('max')" class="btn-max-full">
+                            <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <span>Написать в мессенджер MAX</span>
+                        </button>
 
-                        <p id="copy-notice" class="text-[11px] text-center text-emerald-600 font-medium hidden">
-                            ✅ Текст заявки автоматически скопирован! Просто вставьте его в открывшемся чате.
+                        <p id="copy-notice" style="display:none; font-size: 11px; text-align: center; color: var(--emerald); font-weight: 600; margin-top: 10px;">
+                            ✅ Текст заявки скопирован! Просто вставьте его в открывшемся чате.
                         </p>
                     </div>
 
@@ -591,60 +1409,86 @@
         </div>
     </section>
 
-    <!-- Подвал (Footer) -->
-    <footer class="py-8 border-t border-slate-200/80 text-center text-xs text-slate-500">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
             <p>© 2026 Стороженко Юлия Алексеевна. Репетитор по математике и физике.</p>
-            <div class="flex items-center gap-4">
-                <a href="https://t.me/S_L_e_a_h" target="_blank" class="hover:text-primary transition">Telegram</a>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <a href="https://t.me/S_L_e_a_h" target="_blank" style="color: var(--primary); font-weight: 600;">Telegram</a>
                 <span>•</span>
-                <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" class="hover:text-primary transition">Мессенджер MAX</a>
+                <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" style="color: var(--primary); font-weight: 600;">MAX</a>
                 <span>•</span>
-                <span>г. Новороссийск и Онлайн</span>
+                <button type="button" onclick="toggleShareModal()" style="background:none; border:none; color: var(--slate-600); cursor:pointer; text-decoration:underline; font-size:13px;">QR-код сайта</button>
             </div>
         </div>
     </footer>
 
-    <!-- Скрипты интерактивности -->
-    <script>
-        // Инициализация иконок
-        lucide.createIcons();
+    <!-- Плавающая кнопка быстрой связи -->
+    <div class="fab-wrap">
+        <div id="fab-menu" class="fab-menu">
+            <div style="font-size: 11px; font-weight: 700; color: var(--slate-500); padding: 2px 6px;">Быстрая связь:</div>
+            <a href="https://t.me/S_L_e_a_h" target="_blank" class="quick-btn btn-tg-small" style="justify-content: flex-start; padding: 10px 12px;">
+                <span>✈️ Написать в Telegram</span>
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM" target="_blank" class="quick-btn btn-max-small" style="justify-content: flex-start; padding: 10px 12px;">
+                <span>💬 Написать в MAX</span>
+            </a>
+            <button type="button" onclick="toggleShareModal(); toggleFab();" class="quick-btn btn-share" style="justify-content: flex-start; padding: 10px 12px; border:none; cursor:pointer; width:100%;">
+                <span>📱 Показать QR-код</span>
+            </button>
+        </div>
+        <button type="button" onclick="toggleFab()" class="fab-btn" title="Быстрая связь">
+            <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </button>
+    </div>
 
-        // === КОНТАКТЫ ЮЛИИ АЛЕКСЕЕВНЫ ===
+    <!-- Модальное окно с QR-кодом и копированием ссылки -->
+    <div id="share-modal" class="modal-backdrop" onclick="if(event.target === this) toggleShareModal()">
+        <div class="modal-box">
+            <h3 style="font-size: 18px; font-weight: 800; color: var(--slate-900); margin-bottom: 6px;">Поделиться контактом</h3>
+            <p style="font-size: 13px; color: var(--slate-500); margin-bottom: 16px;">Наведите камеру телефона на QR-код или скопируйте ссылку на сайт</p>
+            
+            <div style="background: var(--slate-50); padding: 16px; border-radius: 16px; border: 1px solid var(--slate-200); display: inline-block; margin-bottom: 16px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://yuliaalekseevna-repetitor.github.io/math/" alt="QR-код сайта" style="width: 180px; height: 180px; margin: 0 auto;">
+            </div>
+
+            <button type="button" onclick="copySiteUrl()" id="copy-url-btn" class="btn-primary" style="width: 100%; margin-bottom: 10px;">
+                Скопировать ссылку на сайт
+            </button>
+            <button type="button" onclick="toggleShareModal()" style="background: none; border: none; color: var(--slate-500); font-size: 13px; cursor: pointer; padding: 6px;">
+                Закрыть
+            </button>
+        </div>
+    </div>
+
+    <script>
         const TELEGRAM_USERNAME = "S_L_e_a_h";
         const MAX_PROFILE_LINK = "https://max.ru/u/f9LHodD0cOLPl5EmmiRCUpqlEo58T8AeYnsAMRCEqdezL6z8sRZQ-9SwxmM";
+        const SITE_URL = "https://yuliaalekseevna-repetitor.github.io/math/";
 
-        // Логика калькулятора
-        let currentTrial = 'diag';
-        let currentFreq = 2;
         const basePrice = 1000;
 
         function setTrial(type) {
-            currentTrial = type;
             const btnDiag = document.getElementById('btn-diag');
             const btnHalf = document.getElementById('btn-half');
             const trialResult = document.getElementById('calc-trial-Result');
 
             if (type === 'diag') {
-                btnDiag.className = "p-3 rounded-xl border-2 border-primary bg-indigo-50/60 text-left transition";
-                btnHalf.className = "p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 text-left transition";
+                btnDiag.classList.add('active');
+                btnHalf.classList.remove('active');
                 trialResult.textContent = "Бесплатная диагностика (0 ₽)";
             } else {
-                btnHalf.className = "p-3 rounded-xl border-2 border-primary bg-indigo-50/60 text-left transition";
-                btnDiag.className = "p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 text-left transition";
+                btnHalf.classList.add('active');
+                btnDiag.classList.remove('active');
                 trialResult.textContent = "Первый урок — 500 ₽ (-50%)";
             }
         }
 
         function setFreq(freq) {
-            currentFreq = freq;
             [1, 2, 3].forEach(n => {
                 const btn = document.getElementById('freq-' + n);
-                if (n === freq) {
-                    btn.className = "py-2.5 px-3 rounded-xl border-2 border-primary bg-indigo-50/60 font-semibold text-sm text-primary transition";
-                } else {
-                    btn.className = "py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-700 hover:border-slate-300 transition";
-                }
+                if (n === freq) btn.classList.add('active');
+                else btn.classList.remove('active');
             });
 
             const lessonsPerMonth = freq * 4;
@@ -657,7 +1501,6 @@
             if (freq === 3) hint.textContent = "🚀 3 раза в неделю — интенсивный формат (например, если нужно быстро подтянуть и математику, и физику).";
         }
 
-        // Автовыбор предмета при клике на карточку
         function selectSubjectInForm(subjectName) {
             const select = document.getElementById('form-subject');
             for (let i = 0; i < select.options.length; i++) {
@@ -668,7 +1511,6 @@
             }
         }
 
-        // Формирование сообщения и переход в Telegram / MAX
         function sendToMessenger(platform) {
             const name = document.getElementById('form-name').value.trim() || "Не указано";
             const subject = document.getElementById('form-subject').value;
@@ -677,17 +1519,34 @@
 
             const message = `Здравствуйте, Юлия Алексеевна! Меня зовут ${name}.\nХотим записаться на занятия:\n📚 Направление: ${subject}\n📍 Формат: ${format}\n🎁 Первый шаг: ${promo}`;
 
-            // Копируем текст в буфер обмена
-            navigator.clipboard.writeText(message).then(() => {
-                const notice = document.getElementById('copy-notice');
-                notice.classList.remove('hidden');
-            }).catch(() => {});
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(message).then(() => {
+                    document.getElementById('copy-notice').style.display = 'block';
+                }).catch(() => {});
+            }
 
             if (platform === 'telegram') {
-                const tgUrl = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
-                window.open(tgUrl, '_blank');
+                window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`, '_blank');
             } else if (platform === 'max') {
                 window.open(MAX_PROFILE_LINK, '_blank');
+            }
+        }
+
+        function toggleFab() {
+            document.getElementById('fab-menu').classList.toggle('open');
+        }
+
+        function toggleShareModal() {
+            document.getElementById('share-modal').classList.toggle('open');
+        }
+
+        function copySiteUrl() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(SITE_URL).then(() => {
+                    const btn = document.getElementById('copy-url-btn');
+                    btn.textContent = "✅ Ссылка скопирована!";
+                    setTimeout(() => { btn.textContent = "Скопировать ссылку на сайт"; }, 2500);
+                });
             }
         }
     </script>
